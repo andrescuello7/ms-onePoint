@@ -1,0 +1,20 @@
+{
+  "name": "ms-onepoint",
+  "version": "1.0.1",
+  "description": "It is of depenecie for upload files for onedrive and sharepoint",
+  "main": "index.js",
+  "module": "index.js",
+  "files": [
+    "index.js",
+    "src/"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/andrescuello7/ms-onePoint.git)"
+  },
+  "author": "Andres Cuello",
+  "license": "ISC"
+}
