@@ -18,7 +18,7 @@ const HttpRequest = async ({
 }) => {
     try {
         const result = await new Promise(async (resolve, reject) => {
-            const request = await https.request(url, {
+            const request = https.request(url, {
                 method,
                 headers
             }, (response) => {

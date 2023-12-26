@@ -5,7 +5,7 @@ let instance = null;
  * @class CredentialsProvider
  */
 class CredentialsProvider {
-    credentials = {
+    microsoftAzure = {
         scope: '',
         client_id: '',
         client_secret: '',
@@ -13,6 +13,10 @@ class CredentialsProvider {
         redirect_uri: '',
         refresh_token: '',
         response_type: ''
+    };
+    drive = {
+        drive_id: '',
+        parent_id: ''
     };
 
     /**
@@ -34,7 +38,33 @@ class CredentialsProvider {
      * @returns {Object} - The stored credentials.
      */
     getCredentials() {
-        return this.credentials;
+        return this.microsoftAzure;
+    }
+    /**
+     * Gets the stored credentials from the singleton instance.
+     *
+     * @returns {Object} - The stored credentials.
+     */
+    getDrive() {
+        return this.drive;
+    }
+
+    /**
+     * Sets the drive in the singleton instance.
+     *
+     * @param {Object} params - Parameters for setting drive.
+     * @param {string} params.driveId - The scope of the credentials.
+     * @param {string} params.parentId - The client ID.
+     * @param {string} params.fileName - The client secret.
+     */
+    setDrive({
+        driveId,
+        parentId,
+    }) {
+        this.drive = {
+            drive_id: driveId,
+            parent_id: parentId
+        };
     }
 
     /**
@@ -58,7 +88,7 @@ class CredentialsProvider {
         refreshToken,
         tenantId,
     }) {
-        this.credentials = {
+        this.microsoftAzure = {
             scope: scope,
             client_id: clientId,
             client_secret: clientSecret,

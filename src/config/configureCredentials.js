@@ -6,30 +6,46 @@ const CredentialsProvider = require('../utils/save-credentials')
  * in providers whit methods...
  */
 function configureCredentials({
-    /** 
-     * @param clientId
-     * In Microsoft Azure 
-     * is option 'Application ID (client)'
-     */
-    clientId,
-    /** 
-     * @param clientSecret
-     * In Microsoft Azure 
-     * is option 'AClient credentials'
-     */
-    clientSecret,
-    /** 
-     * @param tenantId
-     * In Microsoft Azure 
-     * is option 'Directory ID (tenant)'
-     */
-    tenantId,
-    /** 
-     * @param redirectUri
-     * In Microsoft Azure 
-     * is option 'Redirect URI'
-     */
-    redirectUri,
+    microsoftAzure: {
+        /** 
+         * @param clientId
+         * In Microsoft Azure 
+         * is option 'Application ID (client)'
+         */
+        clientId,
+        /** 
+         * @param clientSecret
+         * In Microsoft Azure 
+         * is option 'AClient credentials'
+         */
+        clientSecret,
+        /** 
+         * @param tenantId
+         * In Microsoft Azure 
+         * is option 'Directory ID (tenant)'
+         */
+        tenantId,
+        /** 
+         * @param redirectUri
+         * In Microsoft Azure 
+         * is option 'Redirect URI'
+         */
+        redirectUri,
+    },
+    drive: {
+        /** 
+         * @param driveId
+         */
+        driveId,
+        /** 
+         * @param parentId
+         */
+        parentId,
+        /** 
+         * @param fileName
+         */
+        fileName,
+    }
 }) {
     // Initialized credentials sigleton
     const provider = CredentialsProvider.InitCredentials();
@@ -40,6 +56,11 @@ function configureCredentials({
         clientSecret,
         tenantId,
         redirectUri
+    });
+    // Set Drive
+    provider.setDrive({
+        driveId,
+        parentId,
     });
 }
 
