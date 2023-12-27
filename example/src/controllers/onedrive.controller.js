@@ -23,7 +23,7 @@ const uploadFile = async (req, res) => {
     try {
         const { access_token } = await onepoint.refreshAccessToken({ refreshAccessToken: process.env.ONEDRIVE_REFRESH_TOKEN });
         const { id } = await onepoint.uploadFileToOneDrive({ authToken: access_token, data: fs.readFileSync('./store.png'), fileName: 'store.png' });
-        const { link } = await onepoint.createSharedLink({ authToken: access_token, fileId: id });
+        const { link } = await onepoint.createSharedLink({ authToken: access_token, fileId: id, type: { type: 'edit' }});
         res.status(200).send({ response: link })
     } catch (error) {
         res.status(400).send({ error: `Error ${error}` })

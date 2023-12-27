@@ -2,7 +2,7 @@ const { urlSharedLink } = require('../values/pathValues')
 const httpRequest = require('../utils/http-request')
 const CredentialsProvider = require('../utils/save-credentials')
 
-async function createSharedLink({fileId, authToken}) {
+async function createSharedLink({fileId, authToken, type}) {
     // Initialize credentials provider
     const credentials = CredentialsProvider.InitCredentials();
     
@@ -20,9 +20,7 @@ async function createSharedLink({fileId, authToken}) {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${authToken}`
             },
-            body: JSON.stringify({
-                type: 'edit'
-            })
+            body: JSON.stringify(type)
         });
 
         // Return the authentication response

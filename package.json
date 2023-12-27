@@ -1,6 +1,6 @@
 {
   "name": "ms-onepoint",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "It is of depenecie for upload files for onedrive and sharepoint",
   "main": "index.js",
   "module": "index.js",
