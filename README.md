@@ -1,7 +1,7 @@
 # ms-onepoint
 
-<p align="center" width="800">
-  <img align="center" style="width=100%; border-radius: 50%" src="https://i.ibb.co/LZ67ywk/IMG-4637.jpg" />
+<p align="center">
+  <img align="center" width="500px" src="https://i.ibb.co/LZ67ywk/IMG-4637.jpg" />
 </p>
 # ms-onepoint
 
